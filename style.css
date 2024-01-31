@@ -357,4 +357,6 @@ article .icon {
 
 /* Projects Section */
 
-
+#projects {
+  position: relative;
+}
