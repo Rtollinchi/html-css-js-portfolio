@@ -382,6 +382,52 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
+.article-containers {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  width: auto;
+  justify-content: start;
+  gap: 0.5rem;
+  min-width: 10rem;
+}
+
+article .icon {
+  cursor: default;
+  width: 24px;
+  height: 24px;
+}
+
+article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+article h3, article p {
+  margin: 0;
+  display: block;
+  text-align: left;
+}
+
+article h3 {
+  height: 1.2em;
+}
+
+article p {
+  height: 1em;
+}
+
+
 /* Contact */
 
 #contact {
