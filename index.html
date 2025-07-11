@@ -29,10 +29,12 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <ul>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -46,7 +48,7 @@
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Rubin Tollinchi</h1>
-        <p class="section__text__p2">Web Developer | Software Engineer</p>
+        <p class="section__text__p2">Software Engineer</p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -73,6 +75,13 @@
           />
         </div>
       </div>
+          <img
+      src="./assets/arrow.png"
+      alt="Arrow icon"
+      class="icon arrow"
+      onclick="location.href='./#about'"
+    />
+</section>
     </section>
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
@@ -94,7 +103,10 @@
                 class="icon"
               />
               <h3>Experience</h3>
-              <p>Fullstack Developer</p>
+              <p>
+                <strong>Software Engineer</strong><br />
+                Verizon | August 2024 – Present
+              </p>
             </div>
             <div class="details-container">
               <img
@@ -103,20 +115,24 @@
                 class="icon"
               />
               <h3>Education</h3>
-              <p>Fullstack Academy Bootcamp<br />Associates Degree</p>
+              <p>
+                <strong>Multiverse</strong><br />
+                Software Engineering | 2025<br />
+                <strong>Fullstack Academy</strong><br />
+                Software Engineering | 2023<br />
+                <strong>Suffolk Community College</strong><br />
+                Associates in Applied Science | 2006
+              </p>
             </div>
           </div>
           <div class="text-container">
             <p>
-              As a dynamic Web Developer transitioning from a career in finance
-              to the tech industry, I bring a unique perspective and a
-              foundational understanding of key technologies like JavaScript,
-              React, and Node.js. My journey is marked by a voracious appetite
-              for learning and a commitment to evolving my skills. With a solid
-              base in both front-end and back-end development, I am excited to
-              grow and tackle challenges head-on, leveraging my analytical
-              skills from finance to innovate and create meaningful,
-              user-centered solutions.
+              Results-driven full-stack software engineer with comprehensive experience in web development,
+              test automation, security remediation, and AI integrations. Currently leading security
+              vulnerability remediation for Atlas SSP projects, developing extensive Playwright test
+              automation, and promoting AI adoption through proof-of-concept solutions at Verizon.
+              Passionate about building intuitive, secure, and innovative software solutions that
+              enhance business operations and user experiences.
             </p>
           </div>
         </div>
@@ -176,6 +192,36 @@
                   <h3>Tailwind CSS</h3>
                 </div>
               </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>React.js</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>TypeScript</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Vue.js</h3>
+                </div>
+              </article>
             </div>
           </div>
           <div class="details-container">
@@ -231,6 +277,67 @@
                  <h3>Azure/Entra ID</h3>
                 </div>
               </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Sequelize</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>AWS</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Terraform</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Playwright Testing</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Security Tools</h3>
+                  <p>Fortify, BlackDuck, Sysdig</p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
@@ -243,77 +350,137 @@
       />
     </section>
     <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
+  <p class="section__text__p1">Browse My Recent</p>
+  <h1 class="title">Multiverse Projects</h1>
+  <div class="experience-details-container">
+    <div class="about-containers">
+      <div class="projects-stack">
+        <div class="projects-row">
+          <!-- Project 1: Inventory Full Stack Application -->
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-1.png"
-                alt="Project 1"
+                src="./assets/FunkOStore.png"
+                alt="FunkOStore"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">To-Do Genie App</h2>
+            <h2 class="experience-sub-title project-title">FunkOStore</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Rtollinchi/Team-9-Capstone'"
+                onclick="location.href='https://github.com/team3-connect/inventree'"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://to-do-genie-jotx.onrender.com/'"
+                onclick="location.href='https://funkostore-5u1o.onrender.com/'"
               >
                 Live Demo
               </button>
             </div>
           </div>
+
+          <!-- Project 2: Final Bootcamp Hackathon Project -->
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-2.png"
-                alt="Project 2"
+                src="./assets/ghostly-estates.png"
+                alt="Ghostly Estates"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Chess Web App</h2>
+            <h2 class="experience-sub-title project-title">Ghostly Estates</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Rtollinchi/Chess'"
+                onclick="location.href='https://github.com/Rtollinchi/Ghostly-Estates'"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://chess-seven-dun.vercel.app/'"
+                onclick="location.href='https://ghostly-estates.netlify.app/'"
               >
                 Live Demo
               </button>
             </div>
           </div>
+        </div>
+        <div class="projects-row">
+          <!-- Project 3: Back End Module Project -->
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-3.png"
-                alt="Project 3"
+                src="./assets/library-link.png"
+                alt="Library Link"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Mobile App</h2>
+            <h2 class="experience-sub-title project-title">Library Link</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Rtollinchi/vue.js-todo-proj'"
+                onclick="location.href='https://github.com/RLD-TEAM/RLD-bookies'"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://vue-js-todo-proj.vercel.app/'"
+                onclick="location.href='https://github.com/RLD-TEAM/RLD-bookies'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <!-- Project 4: Front End Module Project -->
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/Reel-list.png"
+                alt="Reel-list"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Reel List</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/devs-cr/Reel-List'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://movies-to-see.onrender.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Project 5: Deployment Module Project (centered below) -->
+        <div class="projects-row projects-row-single">
+          <div class="details-container color-container project-card-center">
+            <div class="article-container">
+              <img
+                src="./assets/QuikNotes.png"
+                alt="QuikNotes"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">QuikNotes</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/QuikNotes/QuikNotes'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://quiknotes.onrender.com/'"
               >
                 Live Demo
               </button>
@@ -321,13 +488,43 @@
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
+    </div>
+  </div>
+  <img
+    src="./assets/arrow.png"
+    alt="Arrow icon"
+    class="icon arrow"
+    onclick="location.href='./#apprenticeship'"
+  />
+</section>
+<section id="apprenticeship">
+  <p class="section__text__p1">My Journey</p>
+  <h1 class="title">Multiverse Apprenticeship</h1>
+  <div class="section-container">
+    <div class="about-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <h3>Apprenticeship Overview</h3>
+          <p>
+            As a Multiverse apprentice, I’ve gained real-world engineering experience by contributing directly to enterprise-grade applications at Verizon. I’ve led efforts in security vulnerability remediation, test automation, and AI tool development, building on a solid foundation from my software engineering bootcamp. My apprenticeship combined structured technical training with impactful hands-on work, including developing CI/CD pipelines, summarization tools using LLMs, and end-to-end UI test coverage with Playwright.
+          </p>
+        </div>
+        <div class="details-container">
+          <h3>Learning Reflection</h3>
+          <p>
+            During my Multiverse journey, I’ve grown significantly as a developer, especially in building secure, scalable applications and developing robust automation workflows. I overcame complex challenges in integrating AI into infrastructure tools, deepened my skills in JavaScript, React, and Node.js, and expanded into Python, Terraform, and prompt engineering with LangGraph.  Moving forward, I’m focused on specializing in AI-enhanced tooling, DevSecOps practices, and continuing to elevate engineering culture through collaboration and continuous learning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img
+    src="./assets/arrow.png"
+    alt="Arrow icon"
+    class="icon arrow"
+    onclick="location.href='./#contact'"
+  />
+</section>
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
