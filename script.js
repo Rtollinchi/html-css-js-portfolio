@@ -1,8 +1,17 @@
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
+
   menu.classList.toggle("open");
   icon.classList.toggle("open");
+
+  if (menu.classList.contains("open") && window.innerWidth <= 480) {
+    const profileSection = document.getElementById("profile");
+    if (profileSection) {
+      profileSection.style.position = "relative";
+      profileSection.style.zIndex = "1";
+    }
+  }
 }
 
 // Dark mode functionality
@@ -31,13 +40,10 @@ function applyTheme() {
   const savedTheme = localStorage.getItem("theme");
 
   if (savedTheme === "light") {
-    // Only apply light mode if explicitly set
     syncToggles(false);
   } else {
-    // Default to dark mode (either if saved as dark or if no preference is set)
     document.body.classList.add("dark-mode");
     syncToggles(true);
-    // Save the preference if it wasn't already set
     if (!savedTheme) {
       localStorage.setItem("theme", "dark");
     }
@@ -49,10 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const desktopToggle = document.getElementById("theme-toggle-checkbox");
   const mobileToggle = document.getElementById("mobile-theme-toggle-checkbox");
 
-  // Apply saved theme preference
   applyTheme();
 
-  // Add event listeners to toggles
   desktopToggle.addEventListener("change", () => {
     toggleDarkMode();
     syncToggles(desktopToggle.checked);
@@ -63,14 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     syncToggles(mobileToggle.checked);
   });
 
-  // Get all contact links
   const contactLinks = document.querySelectorAll(".contact-info-container p a");
 
   contactLinks.forEach((link) => {
     const container = link.closest(".contact-info-container");
     const icon = container.querySelector(".contact-icon");
-
-    // When hovering over the link, move both link and icon
+    
     link.addEventListener("mouseenter", () => {
       icon.style.transform = "translateY(-3px)";
     });

@@ -71,9 +71,14 @@ a:hover {
 #hamburger-nav {
   display: none;
   position: relative;
-  z-index: 1000;
+  z-index: 50;
   justify-content: space-between;
-  padding: 0 5%;
+  padding: 1.5rem 5%;
+  align-items: center;
+}
+
+#hamburger-nav + section {
+  margin-top: 20px;
 }
 
 .hamburger-menu {
@@ -81,6 +86,11 @@ a:hover {
   display: inline-block;
   z-index: 1000;
   margin-right: 15px;
+}
+
+.menu-links {
+  position: absolute;
+  right: 20px;
 }
 
 .hamburger-icon {
@@ -104,22 +114,26 @@ a:hover {
   position: absolute;
   top: 100%;
   right: -15px;
-  background: none;
-  width: fit-content;
+  background: transparent;
+  width: 180px;
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  z-index: 999;
+  padding: 0;
+  display: none;
 }
 
 .menu-links a {
   display: block;
-  padding: 8px 0;
+  padding: 12px 0;
   text-align: right;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: rgb(53, 53, 53);
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  margin-bottom: 5px;
 }
 
 .menu-links a:hover {
@@ -134,6 +148,9 @@ a:hover {
 .menu-links.open {
   max-height: 300px;
   margin-top: 10px;
+  padding: 10px 0;
+  right: 0;
+  display: block; /* Show when open */
 }
 
 .hamburger-icon.open span:first-child {
@@ -394,7 +411,6 @@ section {
   height: 40px;
   margin-right: 10px;
   object-fit: contain;
-  /* Fix for SVG display issues */
   background-color: transparent;
   padding: 5px;
   border-radius: 5px;
@@ -403,7 +419,6 @@ section {
   vertical-align: middle;
 }
 
-/* Specific styling for problematic icons */
 img[src$="express-alt.svg"].skill-icon {
   width: 36px;
   height: 36px;
@@ -429,7 +444,6 @@ article:hover .skill-icon {
   transition: transform 0.3s;
 }
 
-/* Force visibility for all SVGs */
 .article-containers article svg,
 .article-containers article img[src$=".svg"] {
   fill: currentColor;
@@ -478,6 +492,8 @@ article {
   gap: 0.5rem;
   margin-bottom: 15px;
   transition: transform 0.3s;
+  flex-direction: column;
+  align-items: center;
 }
 
 article:hover {
@@ -563,7 +579,6 @@ article p {
   height: 1em;
 }
 
-/* Projects Section Layout Fix */
 .projects-stack {
   display: flex;
   flex-direction: column;
@@ -704,7 +719,6 @@ footer p {
   text-align: center;
 }
 
-/* Apprenticeship Section */
 #apprenticeship {
   position: relative;
   min-height: 60vh;
@@ -753,7 +767,6 @@ footer p {
   line-height: 1.6;
 }
 
-/* Responsive for apprenticeship section */
 @media screen and (max-width: 900px) {
   #apprenticeship .about-containers {
     flex-direction: column;
@@ -830,8 +843,16 @@ footer p {
 }
 
 .mobile-toggle {
-  margin: 1rem auto;
-  justify-content: center;
+  margin: 1rem 0;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.theme-toggle-item {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
 /* DARK MODE STYLES */
@@ -861,8 +882,9 @@ footer p {
 .dark-mode #desktop-nav,
 .dark-mode #hamburger-nav,
 .dark-mode .logo,
-.dark-mode .nav-links li a {
-  background-color: #1e1e1e;
+.dark-mode .nav-links li a,
+.dark-mode .menu-links a {
+  background-color: transparent;
   color: #f0f0f0;
 }
 
@@ -871,7 +893,17 @@ footer p {
 }
 
 .dark-mode .menu-links {
-  background-color: #1e1e1e;
+  background: transparent;
+}
+
+.dark-mode .menu-links a {
+  color: #f0f0f0;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .menu-links a:hover {
+  color: #ffffff;
+  transform: translateX(-3px);
 }
 
 .dark-mode .details-container {
@@ -965,13 +997,11 @@ footer p {
   text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
 }
 
-/* Better button visibility in all contexts */
 .btn-color-2 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Enhance button visibility in project cards */
 .details-container .btn-container .btn {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
