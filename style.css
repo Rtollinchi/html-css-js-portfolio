@@ -70,11 +70,17 @@ a:hover {
 
 #hamburger-nav {
   display: none;
+  position: relative;
+  z-index: 1000;
+  justify-content: space-between;
+  padding: 0 5%;
 }
 
 .hamburger-menu {
   position: relative;
   display: inline-block;
+  z-index: 1000;
+  margin-right: 15px;
 }
 
 .hamburger-icon {
@@ -89,29 +95,36 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
-  transition: all 0.3 ease-in-out;
+  background-color: rgb(53, 53, 53);
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
 .menu-links {
   position: absolute;
   top: 100%;
-  right: 0;
-  background-color: white;
+  right: -15px;
+  background: none;
   width: fit-content;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-links a {
   display: block;
-  padding: 10px;
-  text-align: center;
+  padding: 8px 0;
+  text-align: right;
   font-size: 1.5rem;
-  color: black;
+  font-weight: 500;
+  color: rgb(53, 53, 53);
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links a:hover {
+  color: #000;
+  transform: translateX(-3px);
 }
 
 .menu-links li {
@@ -120,6 +133,7 @@ a:hover {
 
 .menu-links.open {
   max-height: 300px;
+  margin-top: 10px;
 }
 
 .hamburger-icon.open span:first-child {
@@ -168,6 +182,7 @@ section {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+  overflow: visible;
 }
 
 .section__pic-container {
@@ -210,6 +225,13 @@ section {
 
 /* Icons */
 
+.contact-info-container .icon {
+  margin-top: 0;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
 .icon {
   cursor: pointer;
   height: 2rem;
@@ -230,11 +252,16 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  margin: 2px;
 }
 
 .btn-color-1,
 .btn-color-2 {
   border: rgb(53, 53, 53) 0.1rem solid;
+  font-weight: 600;
 }
 
 .btn-color-1:hover,
@@ -242,18 +269,37 @@ section {
   cursor: pointer;
 }
 
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
+.btn-color-1 {
+  background: transparent;
+  color: rgb(0, 0, 0);
+  border-color: rgb(53, 53, 53);
+  border-width: 2px;
+  font-weight: 600;
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: rgb(53, 53, 53);
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
+}
+
+.btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+  font-weight: 600;
+  border-width: 2px;
+  border-color: rgb(53, 53, 53);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
 }
 
 .btn-color-2 {
-  background-color: none;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  border-color: rgb(53, 53, 53);
+  border-width: 2px;
 }
 
 .btn-color-2:hover {
@@ -343,6 +389,54 @@ section {
   line-height: 1.4;
 }
 
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  object-fit: contain;
+  /* Fix for SVG display issues */
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  filter: grayscale(0);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Specific styling for problematic icons */
+img[src$="express-alt.svg"].skill-icon {
+  width: 36px;
+  height: 36px;
+  margin-top: 0;
+}
+
+img[src$="aws.svg"].skill-icon,
+img[src$="aws.png"].skill-icon {
+  width: 60px;
+  height: 40px;
+  margin-right: 0;
+  object-fit: contain;
+}
+
+img[src$="tailwind.svg"].skill-icon {
+  width: 100px;
+  height: 100px;
+  margin-top: 0;
+}
+
+article:hover .skill-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+/* Force visibility for all SVGs */
+.article-containers article svg,
+.article-containers article img[src$=".svg"] {
+  fill: currentColor;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 @media screen and (max-width: 900px) {
   #about .skills-container {
     flex-direction: column;
@@ -382,6 +476,12 @@ article {
   width: 10rem;
   justify-content: space-around;
   gap: 0.5rem;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+article:hover {
+  transform: translateY(-5px);
 }
 
 article .icon {
@@ -412,7 +512,9 @@ article .icon {
 
 .project-btn {
   color: black;
-  border-color: rgb(163, 163, 163);
+  border-color: rgb(80, 80, 80);
+  border-width: 2px;
+  font-weight: 600;
 }
 
 .article-containers {
@@ -517,33 +619,78 @@ article p {
 .contact-info-upper-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  background: transparent;
   margin: 2rem auto;
-  padding: 0.5rem;
+  padding: 1rem;
+  max-width: 600px;
 }
 
 .contact-info-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.contact-info-container:hover {
+  transform: none;
 }
 
 .contact-info-container p {
   font-size: larger;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.contact-info-container a {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  color: rgb(85, 85, 85);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.contact-info-container p a:hover {
+  transform: translateY(-3px);
+  color: rgb(53, 53, 53);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.contact-info-container a:hover ~ .contact-icon,
+.contact-info-container a:hover ~ .icon,
+.contact-info-container a:hover .icon {
+  transform: translateY(-3px);
 }
 
 .contact-icon {
   cursor: default;
-  margin-bottom: 1rem;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info-container:hover .contact-icon {
+  transform: none;
 }
 
 .email-icon {
   height: 2.5rem;
+  margin-top: 0;
 }
 
 /* Footer */
@@ -615,4 +762,252 @@ footer p {
   #apprenticeship .details-container {
     max-width: 90vw;
   }
+}
+
+/* DARK MODE TOGGLE */
+
+.theme-toggle {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle input {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle-label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #e8e8e8;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.toggle-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.light-icon {
+  right: 10px;
+}
+
+.dark-icon {
+  left: 10px;
+}
+
+.toggle-ball {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+#theme-toggle-checkbox:checked + .toggle-label .toggle-ball,
+#mobile-theme-toggle-checkbox:checked + .toggle-label .toggle-ball {
+  transform: translateX(30px);
+  background-color: #2c2c2c;
+}
+
+#theme-toggle-checkbox:checked + .toggle-label,
+#mobile-theme-toggle-checkbox:checked + .toggle-label {
+  background-color: #7d7d7d;
+}
+
+.mobile-toggle {
+  margin: 1rem auto;
+  justify-content: center;
+}
+
+/* DARK MODE STYLES */
+
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark-mode p {
+  color: #d0d0d0;
+}
+
+.dark-mode .title {
+  color: #f0f0f0;
+}
+
+.dark-mode .section__text__p1 {
+  color: #b3b3b3;
+}
+
+.dark-mode .section__text__p2 {
+  color: #d0d0d0;
+}
+
+.dark-mode nav,
+.dark-mode #desktop-nav,
+.dark-mode #hamburger-nav,
+.dark-mode .logo,
+.dark-mode .nav-links li a {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.dark-mode .hamburger-icon span {
+  background-color: #f0f0f0;
+}
+
+.dark-mode .menu-links {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .details-container {
+  background-color: #2a2a2a;
+}
+
+.dark-mode .color-container {
+  background-color: #2a2a2a;
+  border-color: #444444;
+}
+
+.dark-mode .btn-color-2 {
+  border-color: #ffffff;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.dark-mode .btn-color-1 {
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  border-color: #ffffff;
+  border-width: 2px;
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .btn-color-1:hover {
+  background-color: #505050;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .btn-color-2:hover {
+  border-color: #ffffff;
+  background-color: #505050;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.dark-mode footer a {
+  color: #d0d0d0;
+}
+
+.dark-mode .contact-info-container {
+  background: transparent;
+}
+
+.dark-mode .contact-info-container:hover {
+  transform: none;
+}
+
+.dark-mode .contact-icon {
+  filter: invert(1);
+}
+
+.dark-mode .project-img {
+  border-color: #444444;
+}
+
+.dark-mode h3 {
+  color: #f0f0f0;
+}
+
+.dark-mode .project-btn {
+  color: #ffffff;
+  border-color: #ffffff;
+  font-weight: 600;
+}
+
+.dark-mode .project-btn:hover {
+  background-color: #404040;
+  color: #ffffff;
+}
+
+.dark-mode .experience-sub-title,
+.dark-mode .project-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.dark-mode .btn {
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Better button visibility in all contexts */
+.btn-color-2 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Enhance button visibility in project cards */
+.details-container .btn-container .btn {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .details-container .btn-container .btn {
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .contact-info-container p a:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-item p a {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.contact-item p a:hover {
+  transform: translateY(-3px);
+}
+
+.contact-item:hover .icon,
+.contact-item p a:hover ~ .icon,
+.contact-item p a:hover + .icon {
+  transform: none;
+}
+
+.contact-item:hover img,
+.contact-item p a:hover + img {
+  transform: translateY(-3px);
 }

@@ -19,6 +19,12 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-toggle-checkbox" aria-label="Toggle dark/light theme" />
+        <label for="theme-toggle-checkbox" class="toggle-label">
+          <span class="toggle-ball"></span>
+        </label>
+      </div>
     </nav>
     <nav id="hamburger-nav">
       <div class="logo">Rubin Tollinchi</div>
@@ -34,6 +40,16 @@
             <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
             <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
             <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li>
+              <div class="theme-toggle mobile-toggle">
+                <input type="checkbox" id="mobile-theme-toggle-checkbox" aria-label="Toggle dark/light theme" />
+                <label for="mobile-theme-toggle-checkbox" class="toggle-label">
+                  <span class="toggle-icon light-icon">☀️</span>
+                  <span class="toggle-icon dark-icon">🌙</span>
+                  <span class="toggle-ball"></span>
+                </label>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -75,13 +91,13 @@
           />
         </div>
       </div>
-          <img
-      src="./assets/arrow.png"
-      alt="Arrow icon"
-      class="icon arrow"
-      onclick="location.href='./#about'"
-    />
-</section>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#about'"
+      />
+    </section>
     </section>
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
@@ -154,9 +170,9 @@
             <div class="article-containers">
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/html5.svg"
+                  alt="HTML5 icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>HTML5</h3>
@@ -164,9 +180,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/css3.svg"
+                  alt="CSS3 icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>CSS</h3>
@@ -174,9 +190,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/javascript.svg"
+                  alt="JavaScript icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Javascript</h3>
@@ -184,9 +200,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/tailwind.svg"
+                  alt="Tailwind CSS icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Tailwind CSS</h3>
@@ -194,9 +210,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/react.svg"
+                  alt="React.js icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>React.js</h3>
@@ -204,9 +220,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/typescript.svg"
+                  alt="TypeScript icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>TypeScript</h3>
@@ -214,9 +230,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/vuejs.svg"
+                  alt="Vue.js icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Vue.js</h3>
@@ -229,9 +245,9 @@
             <div class="article-containers">
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/postgresql.svg"
+                  alt="PostgreSQL icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>PostgreSQL</h3>
@@ -239,9 +255,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/nodejs.svg"
+                  alt="Node.js icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Node.js</h3>
@@ -249,9 +265,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/express-alt.svg"
+                  alt="Express.js icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Express JS</h3>
@@ -259,9 +275,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/github-alt.svg"
+                  alt="GitHub icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Git/Github</h3>
@@ -269,9 +285,9 @@
               </article>
               <article>
                 <img
-                src="./assets/checkmark.png"
-                alt="Experience icon"
-                class="icon"
+                src="./assets/skills-icons/azure.svg"
+                alt="Azure icon"
+                class="icon skill-icon"
               />
                 <div>
                  <h3>Azure/Entra ID</h3>
@@ -279,9 +295,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/python.svg"
+                  alt="Python icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Python</h3>
@@ -289,29 +305,31 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/sequelize-alt.svg"
+                  alt="Sequelize icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Sequelize</h3>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="./assets/skills-icons/aws.svg"
+                    alt="AWS icon"
+                    class="icon skill-icon"
+                  />
+                </a>
                 <div>
                   <h3>AWS</h3>
                 </div>
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/terraform.svg"
+                  alt="Terraform icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Terraform</h3>
@@ -319,9 +337,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/playwright.svg"
+                  alt="Playwright icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Playwright Testing</h3>
@@ -329,9 +347,9 @@
               </article>
               <article>
                 <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
+                  src="./assets/skills-icons/security.svg"
+                  alt="Security tools icon"
+                  class="icon skill-icon"
                 />
                 <div>
                   <h3>Security Tools</h3>
@@ -426,12 +444,6 @@
               >
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/RLD-TEAM/RLD-bookies'"
-              >
-                Live Demo
-              </button>
             </div>
           </div>
           <!-- Project 4: Front End Module Project -->
@@ -460,7 +472,7 @@
             </div>
           </div>
         </div>
-        <!-- Project 5: Deployment Module Project (centered below) -->
+        <!-- Project 5: Deployment Module Project -->
         <div class="projects-row projects-row-single">
           <div class="details-container color-container project-card-center">
             <div class="article-container">
@@ -536,7 +548,7 @@
             class="icon contact-icon email-icon"
           />
           <p>
-            <a href="mailto:examplemail@gmail.com">Rtollinchi23@gmail.com</a>
+            <a href="mailto:Rtollinchi23@gmail.com">Rtollinchi23@gmail.com</a>
           </p>
         </div>
         <div class="contact-info-container">
@@ -546,8 +558,8 @@
             class="icon contact-icon"
           />
           <p>
-            <a href="https://www.linkedin.com/in/rubintollinchi/"
-              >www.linkedin.com/in/rubintollinchi/</a
+            <a href="https://www.linkedin.com/in/rubintollinchi"
+              >www.linkedin.com/in/rubintollinchi</a
             >
           </p>
         </div>
