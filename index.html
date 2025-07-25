@@ -577,5 +577,31 @@
       <p>Copyright &#169; 2025 Rubin Tollinchi All Rights Reserved</p>
     </footer>
     <script src="script.js"></script>
+    <!-- Fallback script in case the main script fails to load properly -->
+    <script>
+      // Ensure the menu toggle works on all devices
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof toggleMenu !== 'function') {
+          // Define fallback if main function didn't load
+          window.toggleMenu = function() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+
+            if (menu && icon) {
+              menu.classList.toggle("open");
+              icon.classList.toggle("open");
+
+              if (menu.classList.contains("open")) {
+                menu.style.display = "block";
+              } else {
+                setTimeout(function() {
+                  menu.style.display = "none";
+                }, 300);
+              }
+            }
+          };
+        }
+      });
+    </script>
   </body>
 </html>

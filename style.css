@@ -113,20 +113,24 @@ a:hover {
 .menu-links {
   position: absolute;
   top: 100%;
-  right: -15px;
-  background: transparent;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
   width: 180px;
-  max-height: 0;
+  max-height: 300px;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 999;
   padding: 0;
   display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .menu-links a {
   display: block;
-  padding: 12px 0;
+  padding: 12px 15px;
   text-align: right;
   font-size: 1.3rem;
   font-weight: 600;
@@ -134,11 +138,19 @@ a:hover {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   margin-bottom: 5px;
+  -webkit-tap-highlight-color: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* Remove tap highlight on iOS */
 }
 
-.menu-links a:hover {
+.menu-links a:hover,
+.menu-links a:active {
   color: #000;
   transform: translateX(-3px);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .menu-links li {
@@ -146,11 +158,13 @@ a:hover {
 }
 
 .menu-links.open {
-  max-height: 300px;
   margin-top: 10px;
   padding: 10px 0;
   right: 0;
-  display: block; /* Show when open */
+  display: block;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .hamburger-icon.open span:first-child {
@@ -711,70 +725,28 @@ article p {
 /* Footer */
 
 footer {
-  height: 26vh;
-  margin: 0 1rem;
+  height: auto;
+  margin: 2rem 1rem;
+  padding: 1rem 0;
 }
 
 footer p {
   text-align: center;
+  margin-top: 1rem;
 }
 
-#apprenticeship {
-  position: relative;
-  min-height: 60vh;
-  margin-bottom: 4rem;
+footer nav {
+  height: auto;
+  margin-bottom: 1.5rem;
 }
 
-#apprenticeship .section-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-}
-
-#apprenticeship .about-details-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-#apprenticeship .about-containers {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
+footer .nav-links {
   justify-content: center;
 }
 
-#apprenticeship .details-container {
-  background: white;
-  border-radius: 2rem;
-  border: rgb(163, 163, 163) 0.1rem solid;
-  padding: 2rem;
-  flex: 1;
-  min-width: 250px;
-  max-width: 500px;
-  text-align: center;
-}
-
-#apprenticeship .details-container h3 {
-  margin-bottom: 1rem;
-  color: rgb(53, 53, 53);
-}
-
-#apprenticeship .details-container p {
-  color: rgb(85, 85, 85);
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-@media screen and (max-width: 900px) {
-  #apprenticeship .about-containers {
-    flex-direction: column;
-    align-items: center;
-  }
-  #apprenticeship .details-container {
-    max-width: 90vw;
-  }
+footer .nav-links a {
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
 }
 
 /* DARK MODE TOGGLE */
@@ -893,7 +865,7 @@ footer p {
 }
 
 .dark-mode .menu-links {
-  background: transparent;
+  background: rgba(30, 30, 30, 0.95);
 }
 
 .dark-mode .menu-links a {
@@ -947,7 +919,6 @@ footer p {
 }
 
 .dark-mode footer {
-  background-color: #1e1e1e;
   color: #f0f0f0;
 }
 

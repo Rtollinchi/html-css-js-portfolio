@@ -2,15 +2,36 @@ function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
 
+  // Toggle classes
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 
-  if (menu.classList.contains("open") && window.innerWidth <= 480) {
-    const profileSection = document.getElementById("profile");
-    if (profileSection) {
-      profileSection.style.position = "relative";
-      profileSection.style.zIndex = "1";
+  // Explicitly set display style to ensure it works across browsers
+  if (menu.classList.contains("open")) {
+    menu.style.display = "block";
+
+    // Add a slight delay to ensure the display property is applied before any animations
+    setTimeout(() => {
+      menu.style.opacity = "1";
+      menu.style.transform = "translateY(0)";
+    }, 10);
+
+    // Handle mobile view adjustments
+    if (window.innerWidth <= 480) {
+      const profileSection = document.getElementById("profile");
+      if (profileSection) {
+        profileSection.style.position = "relative";
+        profileSection.style.zIndex = "1";
+      }
     }
+  } else {
+    menu.style.opacity = "0";
+    menu.style.transform = "translateY(-10px)";
+
+    // Delay hiding the menu to allow for fade-out animation
+    setTimeout(() => {
+      menu.style.display = "none";
+    }, 300);
   }
 }
 
@@ -72,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   contactLinks.forEach((link) => {
     const container = link.closest(".contact-info-container");
     const icon = container.querySelector(".contact-icon");
-    
+
     link.addEventListener("mouseenter", () => {
       icon.style.transform = "translateY(-3px)";
     });
@@ -81,4 +102,34 @@ document.addEventListener("DOMContentLoaded", () => {
       icon.style.transform = "none";
     });
   });
+
+  // Initialize mobile menu
+  const menuLinks = document.querySelector(".menu-links");
+  if (menuLinks) {
+    // Ensure proper initial state
+    menuLinks.style.display = "none";
+    menuLinks.style.opacity = "0";
+
+    // Add touch event support for mobile devices
+    const hamburgerIcon = document.querySelector(".hamburger-icon");
+    if (hamburgerIcon) {
+      hamburgerIcon.addEventListener(
+        "touchstart",
+        function (e) {
+          e.preventDefault();
+          toggleMenu();
+        },
+        { passive: false }
+      );
+    }
+
+    // Add touch events to menu links for mobile
+    const menuItems = document.querySelectorAll(".menu-links a");
+    menuItems.forEach((item) => {
+      item.addEventListener("touchstart", function (e) {
+        // Allow default behavior for links but ensure toggle works
+        setTimeout(() => toggleMenu(), 300);
+      });
+    });
+  }
 });
