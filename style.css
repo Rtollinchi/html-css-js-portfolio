@@ -449,7 +449,7 @@ img[src$="aws.png"].skill-icon {
 
 img[src$="tailwind.svg"].skill-icon {
   width: 100px;
-  height: 100px;
+  height: 40px;
   margin-top: 0;
 }
 
@@ -986,6 +986,10 @@ footer .nav-links a {
   transform: translateY(-3px);
 }
 
+.dark-mode .arrow {
+  filter: invert(1);
+}
+
 .contact-item {
   display: flex;
   align-items: center;
@@ -1011,4 +1015,19 @@ footer .nav-links a {
 .contact-item:hover img,
 .contact-item p a:hover + img {
   transform: translateY(-3px);
+}
+
+#apprenticeship .arrow {
+  display: block !important;
+  position: absolute;
+  left: 105%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+#apprenticeship {
+  position: relative;
+  padding-bottom: 60px;
 }

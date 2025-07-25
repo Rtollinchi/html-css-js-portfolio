@@ -1,6 +1,7 @@
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
+  const hamburgerNav = document.querySelector("#hamburger-nav");
 
   // Toggle classes
   menu.classList.toggle("open");
@@ -10,13 +11,18 @@ function toggleMenu() {
   if (menu.classList.contains("open")) {
     menu.style.display = "block";
 
-    // Add a slight delay to ensure the display property is applied before any animations
+    const hamburgerRect = icon.getBoundingClientRect();
+    const navRect = hamburgerNav.getBoundingClientRect();
+
+    menu.style.position = "fixed";
+    menu.style.top = navRect.bottom + 5 + "px";
+    menu.style.right = window.innerWidth - hamburgerRect.right + 15 + "px";
+
     setTimeout(() => {
       menu.style.opacity = "1";
       menu.style.transform = "translateY(0)";
     }, 10);
 
-    // Handle mobile view adjustments
     if (window.innerWidth <= 480) {
       const profileSection = document.getElementById("profile");
       if (profileSection) {
@@ -133,3 +139,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
