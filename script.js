@@ -11,18 +11,49 @@ function toggleMenu() {
   if (menu.classList.contains("open")) {
     menu.style.display = "block";
 
-    const hamburgerRect = icon.getBoundingClientRect();
-    const navRect = hamburgerNav.getBoundingClientRect();
+    // Fix nav bar position
+    hamburgerNav.style.position = "fixed";
+    hamburgerNav.style.top = "0";
 
-    menu.style.position = "fixed";
-    menu.style.top = navRect.bottom + 5 + "px";
-    menu.style.right = window.innerWidth - hamburgerRect.right + 15 + "px";
+    // Handle menu positioning
+    const isMobile = window.innerWidth <= 768;
+    const isIphone = /iPhone/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      menu.style.position = "fixed";
+      menu.style.top = "60px";
+      menu.style.right = "5%";
+
+      // Special handling for iPhone
+      if (isIphone) {
+        menu.style.top = "50px";
+        menu.style.right = "15px";
+
+        // Check if profile picture might overlap with menu
+        const profilePic = document.querySelector(".section__pic-container");
+        if (profilePic) {
+          const profileRect = profilePic.getBoundingClientRect();
+          if (profileRect.top < 200) {
+            // Adjust menu position to avoid profile picture
+            menu.style.right = "25px";
+          }
+        }
+      }
+    } else {
+      const hamburgerRect = icon.getBoundingClientRect();
+      const navRect = hamburgerNav.getBoundingClientRect();
+
+      menu.style.position = "fixed";
+      menu.style.top = navRect.bottom + 5 + "px";
+      menu.style.right = window.innerWidth - hamburgerRect.right + 15 + "px";
+    }
 
     setTimeout(() => {
       menu.style.opacity = "1";
       menu.style.transform = "translateY(0)";
     }, 10);
 
+    // Add backdrop for menu on mobile
     if (window.innerWidth <= 480) {
       const profileSection = document.getElementById("profile");
       if (profileSection) {
@@ -74,6 +105,22 @@ function applyTheme() {
     if (!savedTheme) {
       localStorage.setItem("theme", "dark");
     }
+  }
+}
+
+// Function to close menu when clicking outside
+function closeMenuOnClickOutside(event) {
+  const menu = document.querySelector(".menu-links");
+  const hamburgerIcon = document.querySelector(".hamburger-icon");
+
+  // If menu is open and click is outside menu and hamburger icon
+  if (
+    menu &&
+    menu.classList.contains("open") &&
+    !menu.contains(event.target) &&
+    !hamburgerIcon.contains(event.target)
+  ) {
+    toggleMenu();
   }
 }
 
@@ -138,5 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-});
 
+  // Close menu on click outside
+  document.addEventListener("click", closeMenuOnClickOutside);
+});

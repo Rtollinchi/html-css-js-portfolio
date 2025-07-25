@@ -679,3 +679,59 @@
     position: relative;
   }
 }
+
+/* iPhone 14 Pro specific adjustments */
+@media screen and (max-width: 390px) and (max-height: 844px) {
+  #hamburger-nav {
+    padding: 0.8rem 5%;
+    top: 0;
+    position: fixed;
+    width: 90%;
+  }
+
+  .menu-links {
+    top: 50px;
+    right: 5%;
+  }
+
+  .hamburger-icon {
+    margin-right: 5px;
+  }
+
+  /* Ensure profile section doesn't overlap with menu */
+  #profile {
+    padding-top: 70px;
+  }
+
+  /* Additional space for menu links to not overlap profile picture */
+  .menu-links.open {
+    margin-top: 5px;
+    width: auto;
+    max-width: 150px;
+    right: 15px;
+  }
+
+  .menu-links a {
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Smaller devices (most phones) */
+@media screen and (max-width: 320px) {
+  #hamburger-nav {
+    padding: 0.7rem 4%;
+  }
+
+  .menu-links {
+    top: 45px;
+    right: 4%;
+    max-width: 130px;
+  }
+
+  .menu-links a {
+    font-size: 1.1rem;
+    padding: 8px 12px;
+  }
+}
