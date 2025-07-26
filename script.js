@@ -6,7 +6,7 @@ function toggleMenu() {
   // Toggle classes
   menu.classList.toggle("open");
   icon.classList.toggle("open");
-  
+
   // Toggle fixed positioning for hamburger nav
   if (menu.classList.contains("open")) {
     hamburgerNav.style.position = "fixed";
@@ -120,11 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ensure proper initial state
     menuLinks.style.display = "none";
     menuLinks.style.opacity = "0";
-    
+
     // Make sure hamburger nav is properly positioned initially
     const hamburgerNav = document.querySelector("#hamburger-nav");
     hamburgerNav.style.position = "absolute";
-    
+
     // Add touch event support for mobile devices
     const hamburgerIcon = document.querySelector(".hamburger-icon");
     if (hamburgerIcon) {
