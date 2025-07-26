@@ -1,13 +1,17 @@
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
+  const hamburgerNav = document.querySelector("#hamburger-nav");
 
   // Toggle classes
   menu.classList.toggle("open");
   icon.classList.toggle("open");
-
-  // Explicitly set display style to ensure it works across browsers
+  
+  // Toggle fixed positioning for hamburger nav
   if (menu.classList.contains("open")) {
+    hamburgerNav.style.position = "fixed";
+    hamburgerNav.style.top = "0";
+    hamburgerNav.style.left = "0";
     menu.style.display = "block";
 
     setTimeout(() => {
@@ -15,6 +19,7 @@ function toggleMenu() {
       menu.style.transform = "translateY(0)";
     }, 10);
   } else {
+    hamburgerNav.style.position = "absolute";
     menu.style.opacity = "0";
     menu.style.transform = "translateY(-10px)";
 
@@ -115,7 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ensure proper initial state
     menuLinks.style.display = "none";
     menuLinks.style.opacity = "0";
-
+    
+    // Make sure hamburger nav is properly positioned initially
+    const hamburgerNav = document.querySelector("#hamburger-nav");
+    hamburgerNav.style.position = "absolute";
+    
     // Add touch event support for mobile devices
     const hamburgerIcon = document.querySelector(".hamburger-icon");
     if (hamburgerIcon) {

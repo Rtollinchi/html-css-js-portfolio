@@ -71,15 +71,13 @@ a:hover {
 #hamburger-nav {
   display: none;
   position: absolute;
-  z-index: 50;
+  z-index: 1000;
   justify-content: space-between;
   padding: 1.5rem 5%;
   align-items: center;
   width: 90%;
-}
-
-#hamburger-nav + section {
-  margin-top: 20px;
+  background-color: transparent;
+  transition: all 0.3s ease;
 }
 
 .hamburger-menu {
@@ -153,7 +151,7 @@ a:hover {
 }
 
 .menu-links.open {
-  margin-top: 10px;
+  margin-top: 0;
   padding: 10px 0;
   right: 0;
   display: block;
@@ -208,14 +206,13 @@ section {
   gap: 5rem;
   height: 80vh;
   overflow: visible;
-  padding-top: 50px;
 }
 
 .section__pic-container {
   display: flex;
   height: 200px;
   width: 150px;
-  margin: 100px auto 0;
+  margin: auto 0;
 }
 
 .section__text {
@@ -931,6 +928,12 @@ footer .nav-links a {
 
 .dark-mode .contact-icon {
   filter: invert(1);
+}
+
+.dark-mode #socials-container .icon,
+.dark-mode .contact-info-container .icon[src*="linkedin.png"],
+.dark-mode .contact-info-container .icon[src*="github.png"] {
+  filter: brightness(0) invert(1);
 }
 
 .dark-mode .project-img {
