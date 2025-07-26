@@ -1,7 +1,6 @@
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
-  const hamburgerNav = document.querySelector("#hamburger-nav");
 
   // Toggle classes
   menu.classList.toggle("open");
@@ -11,56 +10,10 @@ function toggleMenu() {
   if (menu.classList.contains("open")) {
     menu.style.display = "block";
 
-    // Fix nav bar position
-    hamburgerNav.style.position = "fixed";
-    hamburgerNav.style.top = "0";
-
-    // Handle menu positioning
-    const isMobile = window.innerWidth <= 768;
-    const isIphone = /iPhone/i.test(navigator.userAgent);
-
-    if (isMobile) {
-      menu.style.position = "fixed";
-      menu.style.top = "60px";
-      menu.style.right = "5%";
-
-      // Special handling for iPhone
-      if (isIphone) {
-        menu.style.top = "50px";
-        menu.style.right = "15px";
-
-        // Check if profile picture might overlap with menu
-        const profilePic = document.querySelector(".section__pic-container");
-        if (profilePic) {
-          const profileRect = profilePic.getBoundingClientRect();
-          if (profileRect.top < 200) {
-            // Adjust menu position to avoid profile picture
-            menu.style.right = "25px";
-          }
-        }
-      }
-    } else {
-      const hamburgerRect = icon.getBoundingClientRect();
-      const navRect = hamburgerNav.getBoundingClientRect();
-
-      menu.style.position = "fixed";
-      menu.style.top = navRect.bottom + 5 + "px";
-      menu.style.right = window.innerWidth - hamburgerRect.right + 15 + "px";
-    }
-
     setTimeout(() => {
       menu.style.opacity = "1";
       menu.style.transform = "translateY(0)";
     }, 10);
-
-    // Add backdrop for menu on mobile
-    if (window.innerWidth <= 480) {
-      const profileSection = document.getElementById("profile");
-      if (profileSection) {
-        profileSection.style.position = "relative";
-        profileSection.style.zIndex = "1";
-      }
-    }
   } else {
     menu.style.opacity = "0";
     menu.style.transform = "translateY(-10px)";
