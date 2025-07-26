@@ -97,7 +97,7 @@
   .section__pic-container {
     width: 275px;
     height: 275px;
-    margin: 0 auto 2rem;
+    margin: 60px auto 2rem;
   }
 
   .about-containers {
@@ -154,6 +154,7 @@
 
   #profile {
     height: auto;
+    padding-top: 60px;
     padding-bottom: 4rem;
     margin-bottom: 0;
     min-height: 83vh;
@@ -255,7 +256,7 @@
 /* Very Small Phones (380px and below) */
 @media screen and (max-width: 380px) {
   #profile {
-    padding-top: 4rem;
+    padding-top: 70px;
     overflow: visible;
   }
 
