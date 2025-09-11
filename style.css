@@ -517,12 +517,6 @@ article {
   min-width: 120px;
   padding: 1rem;
   border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-article:hover {
-  background: var(--card);
-  transform: translateY(-2px);
 }
 
 .skill-icon {
@@ -530,6 +524,7 @@ article:hover {
   height: 48px !important;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  cursor: default;
 }
 
 /* PROJECTS */
