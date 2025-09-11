@@ -1,11 +1,9 @@
-console.log("Portfolio script loaded");
+// Working Portfolio Navigation Script
+console.log('Portfolio script loaded');
 
-// Backdrop for mobile menu
-document.body.insertAdjacentHTML(
-  "beforeend",
-  '<div class="menu-backdrop"></div>'
-);
-const backdrop = document.querySelector(".menu-backdrop");
+// Create backdrop for mobile menu
+document.body.insertAdjacentHTML('beforeend', '<div class="menu-backdrop"></div>');
+const backdrop = document.querySelector('.menu-backdrop');
 
 function setMenuState(open) {
   const menu = document.getElementById("mobile-menu");
@@ -17,11 +15,11 @@ function setMenuState(open) {
   button.setAttribute("aria-expanded", String(open));
   menu.classList.toggle("open", open);
   document.body.classList.toggle("menu-open", open);
-  backdrop.classList.toggle("active", open);
+  backdrop.classList.toggle('active', open);
 }
 
 function smoothScrollTo(targetId) {
-  console.log("Smooth scrolling to:", targetId);
+  console.log('Smooth scrolling to:', targetId);
   const targetElement = document.querySelector(targetId);
 
   if (targetElement) {
@@ -29,10 +27,41 @@ function smoothScrollTo(targetId) {
     const elementPosition = targetElement.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    // Check if we're on mobile
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      // Slower, smoother scroll for mobile
+      const startPosition = window.pageYOffset;
+      const distance = offsetPosition - startPosition;
+      const duration = Math.min(1200, Math.abs(distance) * 1.5); // Max 1.2 seconds, scaled by distance
+      let start = null;
+
+      function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        // Smooth easing function (ease-in-out)
+        const ease = progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        window.scrollTo(0, startPosition + (distance * ease));
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    } else {
+      // Regular smooth scroll for desktop
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   }
 }
 
@@ -53,9 +82,7 @@ function syncToggles(isChecked) {
 
 function applyTheme() {
   const saved = localStorage.getItem("theme");
-  const prefersDark =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   const useDark = saved ? saved === "dark" : prefersDark;
   document.body.classList.toggle("dark-mode", useDark);
   syncToggles(useDark);
@@ -63,7 +90,7 @@ function applyTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM ready, initializing...");
+  console.log('DOM ready, initializing...');
 
   // Apply theme
   applyTheme();
@@ -77,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hamburger menu toggle
   const hamburgerBtn = document.querySelector(".hamburger-icon");
   if (hamburgerBtn) {
-    hamburgerBtn.addEventListener("click", function () {
-      console.log("Hamburger clicked");
+    hamburgerBtn.addEventListener("click", function() {
+      console.log('Hamburger clicked');
       const isOpen = this.classList.contains("open");
       setMenuState(!isOpen);
     });
@@ -86,23 +113,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Backdrop click to close menu
   if (backdrop) {
-    backdrop.addEventListener("click", () => setMenuState(false));
+    backdrop.addEventListener('click', () => setMenuState(false));
   }
 
   // Mobile navigation links
   const mobileLinks = document.querySelectorAll("#mobile-menu a");
-  console.log("Setting up mobile navigation links:", mobileLinks.length);
+  console.log('Setting up mobile navigation links:', mobileLinks.length);
 
   mobileLinks.forEach((link, index) => {
-    console.log(`Mobile link ${index}:`, link.getAttribute("href"));
+    console.log(`Mobile link ${index}:`, link.getAttribute('href'));
 
-    link.addEventListener("click", function (e) {
-      console.log("Mobile nav clicked:", this.getAttribute("href"));
+    link.addEventListener('click', function(e) {
+      console.log('Mobile nav clicked:', this.getAttribute('href'));
       e.preventDefault();
 
-      const targetId = this.getAttribute("href");
+      const targetId = this.getAttribute('href');
 
-      if (targetId && targetId.startsWith("#")) {
+      if (targetId && targetId.startsWith('#')) {
         // Close menu immediately
         setMenuState(false);
 
@@ -115,11 +142,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Desktop navigation links
-  const desktopLinks = document.querySelectorAll("#desktop-nav .nav-links a");
-  desktopLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href && href.startsWith("#")) {
+  const desktopLinks = document.querySelectorAll('#desktop-nav .nav-links a');
+  desktopLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
         e.preventDefault();
         smoothScrollTo(href);
       }
@@ -127,11 +154,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Footer navigation links
-  const footerLinks = document.querySelectorAll("footer .nav-links a");
-  footerLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href && href.startsWith("#")) {
+  const footerLinks = document.querySelectorAll('footer .nav-links a');
+  footerLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
         e.preventDefault();
         smoothScrollTo(href);
       }
@@ -145,16 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", () => {
       const current = window.scrollY;
       const hidden = current > lastScrollY && current > 10;
-      mobileNav.style.transform = hidden
-        ? "translateY(-100%)"
-        : "translateY(0)";
+      mobileNav.style.transform = hidden ? "translateY(-100%)" : "translateY(0)";
       mobileNav.style.transition = "transform .25s ease";
       lastScrollY = current;
     });
   }
 
   // Close menu on outside click
-  document.addEventListener("click", function (e) {
+  document.addEventListener("click", function(e) {
     const menu = document.getElementById("mobile-menu");
     const button = document.querySelector(".hamburger-icon");
 
@@ -164,4 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
+  console.log('Navigation setup complete');
 });
