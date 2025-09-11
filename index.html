@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Rubin Tollinchi | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
+
     <nav id="desktop-nav" class="site-nav" aria-label="Primary">
       <div class="nav-inner">
         <a href="#" class="logo">Rubin Tollinchi</a>
@@ -19,7 +22,11 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="theme-toggle">
-          <input type="checkbox" id="theme-toggle-checkbox" aria-label="Toggle dark mode" />
+          <input
+            type="checkbox"
+            id="theme-toggle-checkbox"
+            aria-label="Toggle dark mode"
+          />
           <label for="theme-toggle-checkbox" class="toggle-label">
             <span class="toggle-ball"></span>
           </label>
@@ -30,7 +37,12 @@
     <nav id="hamburger-nav" class="site-nav mobile" aria-label="Mobile">
       <div class="nav-inner">
         <a href="#" class="logo">Rubin Tollinchi</a>
-        <button class="hamburger-icon" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <button
+          class="hamburger-icon"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -42,7 +54,11 @@
           <li><a href="#contact" role="menuitem">Contact</a></li>
           <li class="theme-toggle-item">
             <div class="theme-toggle mobile-toggle">
-              <input type="checkbox" id="mobile-theme-toggle-checkbox" aria-label="Toggle dark mode" />
+              <input
+                type="checkbox"
+                id="mobile-theme-toggle-checkbox"
+                aria-label="Toggle dark mode"
+              />
               <label for="mobile-theme-toggle-checkbox" class="toggle-label">
                 <span class="toggle-ball"></span>
               </label>
@@ -52,25 +68,50 @@
       </div>
     </nav>
 
-    <main>
+    <main id="main">
       <section id="profile">
         <div class="section__pic-container">
-          <img src="./assets/profile-pic.png" alt="Rubin Tollinchi headshot" />
+          <img src="./assets/profile-pic.png" alt="Rubin Tollinchi headshot" loading="eager" />
         </div>
         <div class="section__text">
           <p class="section__text__p1">Hello, I'm</p>
           <h1 class="title">Rubin Tollinchi</h1>
           <p class="section__text__p2">Software Engineer</p>
           <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('./assets/RubinTollinchi_Resume.pdf')">Download CV</button>
-            <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+            <button
+              class="btn btn-color-2"
+              onclick="window.open('./assets/RubinTollinchi_Resume.pdf')"
+            >
+              Download Resume
+            </button>
+            <button
+              class="btn btn-color-1"
+              onclick="location.href='./#contact'"
+            >
+              Contact Info
+            </button>
           </div>
           <div id="socials-container">
-            <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" onclick="location.href='https://www.linkedin.com/in/rubintollinchi/'" />
-            <img src="./assets/github.png" alt="GitHub" class="icon" onclick="location.href='https://github.com/Rtollinchi'" />
+            <img
+              src="./assets/linkedin.png"
+              alt="LinkedIn profile"
+              class="icon"
+              onclick="location.href='https://www.linkedin.com/in/rubintollinchi/'"
+            />
+            <img
+              src="./assets/github.png"
+              alt="GitHub profile"
+              class="icon"
+              onclick="location.href='https://github.com/Rtollinchi'"
+            />
           </div>
         </div>
-        <img src="./assets/arrow.png" alt="" class="icon arrow" onclick="location.href='./#about'" />
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll to about section"
+          class="icon arrow"
+          onclick="location.href='./#about'"
+        />
       </section>
 
       <section id="about">
@@ -78,35 +119,54 @@
         <h1 class="title">About Me</h1>
         <div class="section-container">
           <div class="section__pic-container">
-            <img src="./assets/about-pic.png" alt="Rubin working at a desk" class="about-pic" />
+            <img
+              src="./assets/about-pic.png"
+              alt="Rubin working at a desk"
+              class="about-pic"
+              loading="lazy"
+            />
           </div>
           <div class="about-details-container">
             <div class="about-containers">
               <div class="details-container">
-                <img src="./assets/experience.png" alt="" class="icon" />
+                <img src="./assets/experience.png" alt="Experience icon" class="icon" />
                 <h3>Experience</h3>
-                <p><strong>Software Engineer</strong><br />Verizon | August 2024 – Present</p>
+                <p>
+                  <strong>Software Engineer</strong><br />Verizon | August 2024
+                  – Present
+                </p>
               </div>
               <div class="details-container">
-                <img src="./assets/education.png" alt="" class="icon" />
+                <img src="./assets/education.png" alt="Education icon" class="icon" />
                 <h3>Education</h3>
                 <p>
-                  <strong>Multiverse</strong><br />Software Engineering | 2025<br />
-                  <strong>Fullstack Academy</strong><br />Software Engineering | 2023<br />
+                  <strong>Multiverse</strong><br />Software Engineering |
+                  2025<br />
+                  <strong>Fullstack Academy</strong><br />Software Engineering |
+                  2023<br />
                   <strong>Suffolk Community College</strong><br />A.A.S. | 2006
                 </p>
               </div>
             </div>
             <div class="text-container">
               <p>
-                Results-driven full-stack software engineer with experience in web development, test automation, security remediation, and AI integrations.
-                Currently leading security vulnerability remediation, building Playwright test automation, and promoting AI adoption through proof-of-concepts.
-                Passionate about intuitive, secure, and innovative software that improves operations and user experience.
+                Results-driven full-stack software engineer with experience in
+                web development, test automation, security remediation, and AI
+                integrations. Currently leading security vulnerability
+                remediation, building Playwright test automation, and promoting
+                AI adoption through proof-of-concepts. Passionate about
+                intuitive, secure, and innovative software that improves
+                operations and user experience.
               </p>
             </div>
           </div>
         </div>
-        <img src="./assets/arrow.png" alt="" class="icon arrow" onclick="location.href='./#experience'" />
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll to experience section"
+          class="icon arrow"
+          onclick="location.href='./#experience'"
+        />
       </section>
 
       <section id="experience">
@@ -118,31 +178,59 @@
               <h2 class="experience-sub-title">Frontend Development</h2>
               <div class="article-containers">
                 <article>
-                  <img src="./assets/skills-icons/html5.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/html5.svg"
+                    alt="HTML5"
+                    class="icon skill-icon"
+                  />
                   <div><h3>HTML5</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/css3.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/css3.svg"
+                    alt="CSS3"
+                    class="icon skill-icon"
+                  />
                   <div><h3>CSS</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/javascript.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/javascript.svg"
+                    alt="JavaScript"
+                    class="icon skill-icon"
+                  />
                   <div><h3>JavaScript</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/tailwind.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/tailwind.svg"
+                    alt="Tailwind CSS"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Tailwind CSS</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/react.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/react.svg"
+                    alt="React.js"
+                    class="icon skill-icon"
+                  />
                   <div><h3>React.js</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/typescript.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/typescript.svg"
+                    alt="TypeScript"
+                    class="icon skill-icon"
+                  />
                   <div><h3>TypeScript</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/vuejs.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/vuejs.svg"
+                    alt="Vue.js"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Vue.js</h3></div>
                 </article>
               </div>
@@ -151,49 +239,97 @@
               <h2 class="experience-sub-title">Backend Development</h2>
               <div class="article-containers">
                 <article>
-                  <img src="./assets/skills-icons/postgresql.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/postgresql.svg"
+                    alt="PostgreSQL"
+                    class="icon skill-icon"
+                  />
                   <div><h3>PostgreSQL</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/nodejs.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/nodejs.svg"
+                    alt="Node.js"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Node.js</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/express-alt.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/express-alt.svg"
+                    alt="Express.js"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Express JS</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/github-alt.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/github-alt.svg"
+                    alt="Git and GitHub"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Git/GitHub</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/azure.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/azure.svg"
+                    alt="Microsoft Azure"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Azure/Entra ID</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/python.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/python.svg"
+                    alt="Python"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Python</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/sequelize-alt.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/sequelize-alt.svg"
+                    alt="Sequelize ORM"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Sequelize</h3></div>
                 </article>
                 <article>
-                  <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/skills-icons/aws.svg" alt="AWS" class="icon skill-icon" />
+                  <a
+                    href="https://aws.amazon.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="./assets/skills-icons/aws.svg"
+                      alt="Amazon Web Services"
+                      class="icon skill-icon"
+                    />
                   </a>
                   <div><h3>AWS</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/terraform.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/terraform.svg"
+                    alt="Terraform"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Terraform</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/playwright.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/playwright.svg"
+                    alt="Playwright Testing"
+                    class="icon skill-icon"
+                  />
                   <div><h3>Playwright Testing</h3></div>
                 </article>
                 <article>
-                  <img src="./assets/skills-icons/security.svg" alt="" class="icon skill-icon" />
+                  <img
+                    src="./assets/skills-icons/security.svg"
+                    alt="Security Tools"
+                    class="icon skill-icon"
+                  />
                   <div>
                     <h3>Security Tools</h3>
                     <p>Fortify, BlackDuck, Sysdig</p>
@@ -203,7 +339,12 @@
             </div>
           </div>
         </div>
-        <img src="./assets/arrow.png" alt="" class="icon arrow" onclick="location.href='./#projects'" />
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll to projects section"
+          class="icon arrow"
+          onclick="location.href='./#projects'"
+        />
       </section>
 
       <section id="projects">
@@ -215,88 +356,148 @@
               <div class="projects-row">
                 <div class="details-container color-container">
                   <div class="article-container">
-                    <img src="./assets/FunkOStore.png" alt="FunkOStore" class="project-img" />
+                    <img
+                      src="./assets/FunkOStore.png"
+                      alt="FunkOStore e-commerce website"
+                      class="project-img"
+                      loading="lazy"
+                    />
                   </div>
                   <h2 class="experience-sub-title project-title">FunkOStore</h2>
+                  <p class="project-description">Full-stack e-commerce platform built with React, Node.js, and PostgreSQL. Features user authentication, shopping cart functionality, and secure payment processing.</p>
                   <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/team3-connect/inventree'">Github</button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://funkostore-5u1o.onrender.com/'">Live Demo</button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://github.com/team3-connect/inventree'"
+                    >
+                      Github
+                    </button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://funkostore-5u1o.onrender.com/'"
+                    >
+                      Live Demo
+                    </button>
                   </div>
                 </div>
                 <div class="details-container color-container">
                   <div class="article-container">
-                    <img src="./assets/ghostly-estates.png" alt="Ghostly Estates" class="project-img" />
+                    <img
+                      src="./assets/ghostly-estates.png"
+                      alt="Ghostly Estates real estate website"
+                      class="project-img"
+                      loading="lazy"
+                    />
                   </div>
-                  <h2 class="experience-sub-title project-title">Ghostly Estates</h2>
+                  <h2 class="experience-sub-title project-title">
+                    Ghostly Estates
+                  </h2>
+                  <p class="project-description">Horror-themed real estate platform showcasing haunted properties. Built with vanilla JavaScript and CSS animations for an immersive user experience.</p>
                   <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Rtollinchi/Ghostly-Estates'">Github</button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://ghostly-estates.netlify.app/'">Live Demo</button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://github.com/Rtollinchi/Ghostly-Estates'"
+                    >
+                      Github
+                    </button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://ghostly-estates.netlify.app/'"
+                    >
+                      Live Demo
+                    </button>
                   </div>
                 </div>
               </div>
               <div class="projects-row">
                 <div class="details-container color-container">
                   <div class="article-container">
-                    <img src="./assets/library-link.png" alt="Library Link" class="project-img" />
+                    <img
+                      src="./assets/library-link.png"
+                      alt="Library Link management system"
+                      class="project-img"
+                      loading="lazy"
+                    />
                   </div>
-                  <h2 class="experience-sub-title project-title">Library Link</h2>
+                  <h2 class="experience-sub-title project-title">
+                    Library Link
+                  </h2>
+                  <p class="project-description">Comprehensive library management system built with React and Express.js. Features book catalog, user accounts, and lending tracking functionality.</p>
                   <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/RLD-TEAM/RLD-bookies'">Github</button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://github.com/RLD-TEAM/RLD-bookies'"
+                    >
+                      Github
+                    </button>
                   </div>
                 </div>
                 <div class="details-container color-container">
                   <div class="article-container">
-                    <img src="./assets/Reel-list.png" alt="Reel List" class="project-img" />
+                    <img
+                      src="./assets/Reel-list.png"
+                      alt="Reel List movie tracking app"
+                      class="project-img"
+                      loading="lazy"
+                    />
                   </div>
                   <h2 class="experience-sub-title project-title">Reel List</h2>
+                  <p class="project-description">Movie tracking and recommendation app using The Movie Database API. Users can create watchlists, rate films, and discover new content based on preferences.</p>
                   <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/devs-cr/Reel-List'">Github</button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://movies-to-see.onrender.com/'">Live Demo</button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://github.com/devs-cr/Reel-List'"
+                    >
+                      Github
+                    </button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://movies-to-see.onrender.com/'"
+                    >
+                      Live Demo
+                    </button>
                   </div>
                 </div>
               </div>
               <div class="projects-row projects-row-single">
-                <div class="details-container color-container project-card-center">
+                <div
+                  class="details-container color-container project-card-center"
+                >
                   <div class="article-container">
-                    <img src="./assets/QuikNotes.png" alt="QuikNotes" class="project-img" />
+                    <img
+                      src="./assets/QuikNotes.png"
+                      alt="QuikNotes note-taking app"
+                      class="project-img"
+                      loading="lazy"
+                    />
                   </div>
                   <h2 class="experience-sub-title project-title">QuikNotes</h2>
+                  <p class="project-description">Fast and intuitive note-taking application with real-time saving, markdown support, and cloud synchronization. Built with modern web technologies for optimal performance.</p>
                   <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/QuikNotes/QuikNotes'">Github</button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://quiknotes.onrender.com/'">Live Demo</button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://github.com/QuikNotes/QuikNotes'"
+                    >
+                      Github
+                    </button>
+                    <button
+                      class="btn btn-color-2 project-btn"
+                      onclick="location.href='https://quiknotes.onrender.com/'"
+                    >
+                      Live Demo
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <img src="./assets/arrow.png" alt="" class="icon arrow" onclick="location.href='./#apprenticeship'" />
-      </section>
-
-      <section id="apprenticeship">
-        <p class="section__text__p1">My Journey</p>
-        <h1 class="title">Multiverse Apprenticeship</h1>
-        <div class="section-container">
-          <div class="about-details-container">
-            <div class="about-containers">
-              <div class="details-container">
-                <h3>Apprenticeship Overview</h3>
-                <p>
-                  As a Multiverse apprentice, I gained real-world engineering experience contributing to enterprise-grade applications at Verizon.
-                  I led security remediation, test automation, and AI tooling, including CI/CD improvements, LLM-based summarization tools, and end-to-end UI testing with Playwright.
-                </p>
-              </div>
-              <div class="details-container">
-                <h3>Learning Reflection</h3>
-                <p>
-                  I grew in building secure, scalable applications and robust automation. I deepened skills in JavaScript, React, Node.js, and expanded into Python, Terraform, and prompt engineering with LangGraph.
-                  I’m focused on AI-enhanced tooling, DevSecOps, and elevating engineering culture through collaboration and continuous learning.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img src="./assets/arrow.png" alt="" class="icon arrow" onclick="location.href='./#contact'" />
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll to contact section"
+          class="icon arrow"
+          onclick="location.href='./#contact'"
+        />
       </section>
 
       <section id="contact">
@@ -304,12 +505,22 @@
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
           <div class="contact-info-container">
-            <img src="./assets/email.png" alt="" class="icon contact-icon email-icon" />
-            <p><a href="mailto:Rtollinchi23@gmail.com">Rtollinchi23@gmail.com</a></p>
+            <img
+              src="./assets/email.png"
+              alt="Email icon"
+              class="icon contact-icon email-icon"
+            />
+            <p>
+              <a href="mailto:Rtollinchi23@gmail.com">Rtollinchi23@gmail.com</a>
+            </p>
           </div>
           <div class="contact-info-container">
-            <img src="./assets/linkedin.png" alt="" class="icon contact-icon" />
-            <p><a href="https://www.linkedin.com/in/rubintollinchi">www.linkedin.com/in/rubintollinchi</a></p>
+            <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+            <p>
+              <a href="https://www.linkedin.com/in/rubintollinchi"
+                >www.linkedin.com/in/rubintollinchi</a
+              >
+            </p>
           </div>
         </div>
       </section>
