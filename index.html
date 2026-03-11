@@ -17,6 +17,7 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#highlights">Highlights</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -49,6 +50,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#highlights">Highlights</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
           <li class="theme-toggle-item">
@@ -83,7 +85,7 @@
           <div class="btn-container">
             <button
               class="btn btn-color-2"
-              onclick="window.open('./assets/RubinTollinchi_Resume.pdf')"
+              onclick="window.open('./assets/Rubin_Tollinchi_Resume.pdf')"
             >
               Download Resume
             </button>
@@ -139,8 +141,7 @@
                 />
                 <h3>Experience</h3>
                 <p>
-                  <strong>Software Engineer</strong><br />Verizon | August 2024
-                  – Present
+                  <strong>Software Engineer</strong><br />Verizon | February 2024 – August 2024
                 </p>
               </div>
               <div class="details-container">
@@ -161,13 +162,7 @@
             </div>
             <div class="text-container">
               <p>
-                Results-driven full-stack software engineer with experience in
-                web development, test automation, security remediation, and AI
-                integrations. Currently leading security vulnerability
-                remediation, building Playwright test automation, and promoting
-                AI adoption through proof-of-concepts. Passionate about
-                intuitive, secure, and innovative software that improves
-                operations and user experience.
+                Software Engineer specializing in test automation and application security remediation. At Verizon, built 200+ Playwright tests and resolved 30+ critical vulnerabilities using Fortify, BlackDuck, and Sysdig. Strong JavaScript/TypeScript and Python skills with hands-on experience building automation, developer tooling, and AI-assisted workflows. Career-changer with 12 years in financial services bringing business acumen and client relationship management skills.
               </p>
             </div>
           </div>
@@ -235,14 +230,6 @@
                     class="icon skill-icon"
                   />
                   <div><h3>TypeScript</h3></div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/skills-icons/vuejs.svg"
-                    alt="Vue.js"
-                    class="icon skill-icon"
-                  />
-                  <div><h3>Vue.js</h3></div>
                 </article>
               </div>
             </div>
@@ -332,17 +319,82 @@
                 </article>
                 <article>
                   <img
-                    src="./assets/skills-icons/security.svg"
-                    alt="Security Tools"
+                    src="./assets/skills-icons/docker.svg"
+                    alt="Docker"
                     class="icon skill-icon"
                   />
-                  <div>
-                    <h3>Security Tools</h3>
-                    <p>Fortify, BlackDuck, Sysdig</p>
-                  </div>
+                  <div><h3>Docker</h3></div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/skills-icons/langchain.svg"
+                    alt="LangChain"
+                    class="icon skill-icon"
+                  />
+                  <div><h3>LangChain</h3></div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/skills-icons/langgraph.svg"
+                    alt="LangGraph"
+                    class="icon skill-icon"
+                  />
+                  <div><h3>LangGraph</h3></div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/skills-icons/fortify.svg"
+                    alt="Fortify"
+                    class="icon skill-icon"
+                  />
+                  <div><h3>Fortify</h3></div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/skills-icons/blackduck.svg"
+                    alt="BlackDuck"
+                    class="icon skill-icon"
+                  />
+                  <div><h3>BlackDuck</h3></div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/skills-icons/sysdig.svg"
+                    alt="Sysdig"
+                    class="icon skill-icon"
+                  />
+                  <div><h3>Sysdig</h3></div>
                 </article>
               </div>
             </div>
+          </div>
+        </div>
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll to highlights section"
+          class="icon arrow"
+          onclick="location.href='./#highlights'"
+        />
+      </section>
+
+      <section id="highlights">
+        <p class="section__text__p1">Professional Work</p>
+        <h1 class="title">Highlights From Verizon</h1>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <h2 class="highlight-title">AI-Assisted Terraform Summarization Tool</h2>
+            <p class="highlight-description">Built an AI-powered tool using LangGraph and Anthropic Claude (via AWS Bedrock) that translates large Terraform infrastructure plans into structured, human-readable summaries. Automatically highlights risky resources like IAM access keys and secrets for security reviewers, significantly reducing infrastructure review time for engineering teams.</p>
+            <p class="highlight-tech">Python &bull; LangGraph &bull; Anthropic Claude &bull; AWS Bedrock &bull; Terraform &bull; Pydantic</p>
+          </div>
+          <div class="highlight-card">
+            <h2 class="highlight-title">Enterprise Test Automation Framework</h2>
+            <p class="highlight-description">Designed and maintained 200+ Playwright (TypeScript) automated UI tests across 3 internal enterprise dashboards. Refactored framework into Page Object Model architecture and configuration-driven design, integrating tests into CI pipelines for continuous regression testing and materially reducing reliance on manual QA.</p>
+            <p class="highlight-tech">Playwright &bull; TypeScript &bull; Page Object Model &bull; CI/CD &bull; GitHub Actions</p>
+          </div>
+          <div class="highlight-card">
+            <h2 class="highlight-title">Security Vulnerability Remediation</h2>
+            <p class="highlight-description">Resolved 30+ critical-severity security vulnerabilities by triaging and remediating issues identified by Fortify (static analysis), BlackDuck (dependency scanning), and Sysdig (container runtime scanning). Traced CVEs to specific packages and base images, documenting clear remediation workflows for the security team.</p>
+            <p class="highlight-tech">Fortify &bull; BlackDuck &bull; Sysdig &bull; Node.js &bull; Docker &bull; Security Best Practices</p>
           </div>
         </div>
         <img
@@ -356,165 +408,56 @@
       <section id="projects">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-          <div class="about-containers">
-            <div class="projects-stack">
-              <div class="projects-row">
-                <div class="details-container color-container">
-                  <div class="article-container">
-                    <img
-                      src="./assets/FunkOStore.png"
-                      alt="FunkOStore e-commerce website"
-                      class="project-img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h2 class="experience-sub-title project-title">FunkOStore</h2>
-                  <p class="project-description">
-                    Full-stack e-commerce platform built with React, Node.js,
-                    and PostgreSQL. Features user authentication, shopping cart
-                    functionality, and secure payment processing.
-                  </p>
-                  <div class="btn-container">
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/team3-connect/inventree'"
-                    >
-                      Github
-                    </button>
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://funkostore-5u1o.onrender.com/'"
-                    >
-                      Live Demo
-                    </button>
-                  </div>
-                </div>
-                <div class="details-container color-container">
-                  <div class="article-container">
-                    <img
-                      src="./assets/ghostly-estates.png"
-                      alt="Ghostly Estates real estate website"
-                      class="project-img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h2 class="experience-sub-title project-title">
-                    Ghostly Estates
-                  </h2>
-                  <p class="project-description">
-                    Horror-themed real estate platform showcasing haunted
-                    properties. Built with vanilla JavaScript and CSS animations
-                    for an immersive user experience.
-                  </p>
-                  <div class="btn-container">
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/Rtollinchi/Ghostly-Estates'"
-                    >
-                      Github
-                    </button>
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://ghostly-estates.netlify.app/'"
-                    >
-                      Live Demo
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="projects-row">
-                <div class="details-container color-container">
-                  <div class="article-container">
-                    <img
-                      src="./assets/library-link.png"
-                      alt="Library Link management system"
-                      class="project-img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h2 class="experience-sub-title project-title">
-                    Library Link
-                  </h2>
-                  <p class="project-description">
-                    Comprehensive library management system built with React and
-                    Express.js. Features book catalog, user accounts, and
-                    lending tracking functionality.
-                  </p>
-                  <div class="btn-container">
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/RLD-TEAM/RLD-bookies'"
-                    >
-                      Github
-                    </button>
-                  </div>
-                </div>
-                <div class="details-container color-container">
-                  <div class="article-container">
-                    <img
-                      src="./assets/Reel-list.png"
-                      alt="Reel List movie tracking app"
-                      class="project-img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h2 class="experience-sub-title project-title">Reel List</h2>
-                  <p class="project-description">
-                    Movie tracking and recommendation app using The Movie
-                    Database API. Users can create watchlists, rate films, and
-                    discover new content based on preferences.
-                  </p>
-                  <div class="btn-container">
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/devs-cr/Reel-List'"
-                    >
-                      Github
-                    </button>
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://movies-to-see.onrender.com/'"
-                    >
-                      Live Demo
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="projects-row projects-row-single">
-                <div
-                  class="details-container color-container project-card-center"
-                >
-                  <div class="article-container">
-                    <img
-                      src="./assets/QuikNotes.png"
-                      alt="QuikNotes note-taking app"
-                      class="project-img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h2 class="experience-sub-title project-title">QuikNotes</h2>
-                  <p class="project-description">
-                    Fast and intuitive note-taking application with real-time
-                    saving, markdown support, and cloud synchronization. Built
-                    with modern web technologies for optimal performance.
-                  </p>
-                  <div class="btn-container">
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/QuikNotes/QuikNotes'"
-                    >
-                      Github
-                    </button>
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://quiknotes.onrender.com/'"
-                    >
-                      Live Demo
-                    </button>
-                  </div>
-                </div>
-              </div>
+        <div class="projects-three-grid">
+          <div class="details-container color-container project-no-img">
+            <h2 class="experience-sub-title project-title">SQL Query Buddy</h2>
+            <p class="project-description">
+              Conversational assistant that converts natural language questions into SQL queries using Retrieval-Augmented Generation (RAG) over database schema context. Helps non-SQL users safely query databases while maintaining data integrity. Built with Python, LangChain, OpenAI GPT-4, and vector databases for semantic search and context retrieval.
+            </p>
+            <p class="project-tech">Python &bull; LangChain &bull; OpenAI GPT-4 &bull; Vector Database &bull; RAG &bull; Gradio</p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Rtollinchi/SQL_Query_Buddy'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://huggingface.co/spaces/Cubert23/sql-query-buddy'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container project-no-img">
+            <h2 class="experience-sub-title project-title">Azure Directory Management System</h2>
+            <p class="project-description">
+              Enterprise-grade directory management application leveraging Microsoft Graph API for streamlined user administration and directory operations. Features Azure Active Directory authentication with MSAL, granular role-based access controls (RBAC), and RESTful API endpoints for seamless data synchronization across organizational units.
+            </p>
+            <p class="project-tech">JavaScript &bull; React &bull; Node.js &bull; Express &bull; Microsoft Graph API &bull; Azure Entra ID &bull; RBAC</p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Rtollinchi/AzureDirectoryProject'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container project-no-img">
+            <h2 class="experience-sub-title project-title">AI Code Generator</h2>
+            <p class="project-description">
+              AI-powered code generation tool using OpenAI GPT-4 and Gradio to generate production-ready code in Python, JavaScript, and Java with inline explanations and documentation. Designed to accelerate development workflows and serve as a learning tool for developers exploring new languages or frameworks.
+            </p>
+            <p class="project-tech">Python &bull; OpenAI GPT-4 API &bull; Gradio &bull; Natural Language Processing</p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Rtollinchi/AI-powered-code-generator-'"
+              >
+                Github
+              </button>
             </div>
           </div>
         </div>
@@ -562,6 +505,7 @@
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#highlights">Highlights</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
