@@ -52,20 +52,9 @@
   }
 }
 
-/* <=900 — highlights 3-col → 2-col, projects 3-col → 1-col */
+/* <=900 — projects 3-col → 1-col */
 @media screen and (max-width: 900px) {
-  .highlights-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .projects-three-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* <=600 — highlights 2-col → 1-col */
-@media screen and (max-width: 600px) {
-  .highlights-grid {
     grid-template-columns: 1fr;
   }
 }
